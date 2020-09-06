@@ -13,5 +13,9 @@ async def on_message(message):
     if message.content[0] == "!":
       if message.content[1:] == "help":
         await message.channel.send("ヘルプ")
+      elif message.content[1:] == "new":
+        await message.channel.send("**============**")
+        await message.channel.send("**STARt NEW GAME.**")
+        await message.channel.send("**============**")
 
 client.run(os.environ["TOKEN"])
