@@ -11,8 +11,8 @@ async def on_message(message):
       await message.add_reaction("🤔")
       
     if message.content[0] == "?":
-      if message.content[1:] == "help":
-        await message.channel.send("ヘルプ")
+      if message.content[1:] == "about":
+        embed=discord.Embed(title="ウミガメのスープbotについて", description="メッセージの最後が「?」もしくは「？」である時に、リアクションで「⭕」「❌」「🤔」が付与されます。「⭕」はYESの意味。「❌」はNOの意味。「🤔」は分からない/関係ないの意味。ウミガメのスープの意味はggrks")
       elif message.content[1:] == "new":
         await message.channel.send("**============**")
         await message.channel.send("**STARt NEW GAME.**")
