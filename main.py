@@ -10,7 +10,7 @@ async def on_message(message):
       await message.add_reaction("❌")
       await message.add_reaction("🤔")
       
-    if message.content[0] == "!":
+    if message.content[0] == "?":
       if message.content[1:] == "help":
         await message.channel.send("ヘルプ")
       elif message.content[1:] == "new":
