@@ -1,6 +1,8 @@
 import discord, os
 
-@bot.event
+client = discord.Client()
+
+@client.event
 async def on_message(message):
   if message.channel.name == "ウミガメのスープ":
     if message.content.endswith("?") or message.content.endswith("？"):
