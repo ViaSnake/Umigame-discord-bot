@@ -37,3 +37,4 @@ async def q(ctx, arg):
     await ctx.send(embed=embed)
     await ctx.message.delete()
     
+bot.run(os.environ["TOKEN"])
