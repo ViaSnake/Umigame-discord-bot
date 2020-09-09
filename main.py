@@ -23,6 +23,12 @@ async def on_raw_message_delete(payload):
   await channel.send(embed=embed)
 
 @bot.command()
+async def help(ctx):
+    embed=discord.Embed(title="ウミガメのスープbot", description="?help - ヘルプ\n?about - 情報\n?q [question] - 問題出題")
+    await ctx.send(embed=embed)
+    await ctx.message.delete()
+
+@bot.command()
 async def about(ctx):
     embed=discord.Embed(title="ウミガメのスープbot", description="")
     embed=embed.add_field(name="問題提示方法", value="メッセージが「?q」で始まる時に自動的に問題と認識されます。\n例： `?q これは問題です。`", inline=False)
