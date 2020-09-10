@@ -43,8 +43,8 @@ async def info(ctx, arg):
   if arg == "channel":
     embed=discord.Embed(title="チャンネル情報", description="このDiscordサーバーの各種チャンネルに関する説明です。追加したいチャンネルが有る場合は言ってくれ。気が向いたら追加する。Twitter、YouTubeに限らず割と何でも情報突っ込んだりできるぞ。")
     embed.add_field(name="テキストチャンネル", value=" #チャット - チャットチャンネル\n #画像 - 画像のアップロード場所", inline=False)
-    embed.add_field(name="情報チャンネル", value=" #雀魂 - ゲーム「雀魂」に関する情報\n #シノアリス - ゲーム「シャドウバース」に関する情報\n #ファンタシースターオンライン２ - ゲーム「ファンタシースターオンライン２」に関する情報\n #ポケモンカード - ポケモンカードに関する情報\n *情報がいらないチャンネルはミュート推奨。作っておいてあれだけど、うるさい。", inline=True)
-    embed.add_field(name="ボイスチャンネル", value=" #AFK - 値落ちしても安心！放置していると移動させられるぞ\n #一般 - 喋りたい時に使ってどうぞ。", inline=True)
+    embed.add_field(name="情報チャンネル", value=" #雀魂 - ゲーム「雀魂」に関する情報\n #シノアリス - ゲーム「シャドウバース」に関する情報\n #ファンタシースターオンライン２ - ゲーム「ファンタシースターオンライン２」に関する情報\n #ポケモンカード - ポケモンカードに関する情報\n *情報がいらないチャンネルはミュート推奨。作っておいてあれだけど、うるさい。", inline=False)
+    embed.add_field(name="ボイスチャンネル", value=" #AFK - 値落ちしても安心！放置していると移動させられるぞ\n #一般 - 喋りたい時に使ってどうぞ。", inline=False)
     await ctx.send(embed=embed)
     await ctx.message.delete()
   elif arg == "rythm":
