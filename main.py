@@ -18,7 +18,11 @@ async def on_message(message):
 
 @bot.command()
 async def help(ctx):
-  embed=discord.Embed(title="ウミガメbot", description="?help - ヘルプ\n?about - 情報\n?q [question] - 問題出題")
+  embed=discord.Embed(title="ウミガメbot")
+  embed=embed.add_field(name="ヘルプ", value="`?help`", inline=True)
+  embed=embed.add_field(name="説明", value="`?about`", inline=True)
+  embed=embed.add_field(name="出題", value="`?q [question]`", inline=True)
+  embed=embed.add_field(name="情報", value="`?info [channel/rythm]`", inline=True)
   await ctx.send(embed=embed)
   await ctx.message.delete()
 
