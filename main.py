@@ -16,11 +16,6 @@ async def on_message(message):
       await message.add_reaction("🆖")
   await bot.process_commands(message)
 
-@bot.event
-async def on_message_delete(message):
-  embed=discord.Embed(title="on_message_delete", color=0xff0000, description="message.id[{}]\nmessage.author[{}]".format(message.id, message.author))
-  await message.channel.send(embed=embed)
-
 @bot.command()
 async def help(ctx):
     embed=discord.Embed(title="ウミガメbot", description="?help - ヘルプ\n?about - 情報\n?q [question] - 問題出題")
