@@ -57,5 +57,7 @@ async def info(ctx, arg):
     embed.add_field(name="補足", value="||優しいから全ての情報を書いてあげたが、記憶で書いてるから情報の正確性については1ミリも保証しないからよろしく。他の情報についてはggrks。||", inline=True)
     await ctx.send(embed=embed)
     await ctx.message.delete()
+  else:
+    await ctx.message.delete()
     
 bot.run(os.environ["TOKEN"])
