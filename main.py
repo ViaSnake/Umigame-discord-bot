@@ -36,7 +36,7 @@ async def about(ctx):
   await ctx.message.delete()
 
 @bot.command()
-async def q(ctx, arg):
+async def q(ctx, *, arg):
   embed=discord.Embed(title="問題", description=arg, color=0x00ff00)
   embed.set_author(name="{} が問題を作成".format(ctx.author))
   await ctx.send(embed=embed)
