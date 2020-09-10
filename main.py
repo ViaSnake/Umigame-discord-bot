@@ -17,10 +17,9 @@ async def on_message(message):
   await bot.process_commands(message)
 
 @bot.event
-async def on_raw_message_delete(payload):
-  channel = bot.get_channel(752948742742868050)
-  embed=discord.Embed(title="on_raw_message_delete", color=0xff0000, description="channel_id[{}]\nmessage_id[{}]\nguild_id[{}]".format(payload.channel_id, payload.message_id, payload.guild_id))
-  await channel.send(embed=embed)
+async def on_message_delete(message):
+  embed=discord.Embed(title="on_message_delete", color=0xff0000, description="message.id[{}]\nmessage.author[{}]".format(message.id, message.author))
+  await message.channel.send(embed=embed)
 
 @bot.command()
 async def help(ctx):
