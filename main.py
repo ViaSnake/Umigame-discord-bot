@@ -52,6 +52,11 @@ async def q(ctx, *, arg):
   await ctx.message.delete()
 
 @bot.command()
+async def end(ctx, *, arg):
+  embed=discord.Embed(title="回答", description=arg)
+  await ctx.send(embed=embed)
+
+@bot.command()
 async def info(ctx, arg):
   if arg == "channel":
     embed=discord.Embed(title="チャンネル情報", description="このDiscordサーバーの各種チャンネルに関する説明です。追加したいチャンネルが有る場合は言ってくれ。気が向いたら追加する。Twitter、YouTubeに限らず割と何でも情報突っ込んだりできるぞ。")
