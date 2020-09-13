@@ -49,7 +49,7 @@ async def question(ctx, *, arg):
   await ctx.message.delete()
 
   new_channel = await create_text_channel(ctx.message, channel_name=str(uuid.uuid4())[-6:])
-  await ctx.send(f'{new_channel.mention} を作成しました')
+  await ctx.send(f'{new_channel.mention} を作成しました。')
   await ctx.message.delete()
 
 @bot.command()
