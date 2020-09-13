@@ -1,4 +1,4 @@
-import discord, os
+import discord, os, uuid
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='?')
@@ -36,10 +36,21 @@ async def about(ctx):
   await ctx.message.delete()
 
 @bot.command()
-async def q(ctx, *, arg):
+async def question(ctx, *, arg):
+
+  async def create_text_channel(message, channel_name):
+    category_id = message.channel.category_id
+    category = message.guild.get_channel(category_id)
+    new_channel = await category.create_text_channel(name=channel_name)
+    return new_channel
+  
   embed=discord.Embed(title="問題", description=arg, color=0x00ff00)
   embed.set_author(name="{} が問題を作成".format(ctx.author))
   await ctx.send(embed=embed)
+  await ctx.message.delete()
+
+  new_channel = await create_text_channel(ctx.message, channel_name=str(uuid.uuid4())[-6:])
+  await ctx.send(f'{new_channel.mention} を作成しました')
   await ctx.message.delete()
 
 @bot.command()
