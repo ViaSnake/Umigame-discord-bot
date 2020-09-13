@@ -45,7 +45,6 @@ async def q(ctx, *, arg):
   embed=discord.Embed(title="問題", description=arg, color=0x00ff00)
   embed.set_author(name="{} が問題を作成".format(ctx.author))
   await ctx.send(embed=embed)
-  await ctx.message.delete()
 
   new_channel = await create_text_channel(ctx.message, channel_name=str(uuid.uuid4())[-6:])
   await ctx.send(f'{new_channel.mention} を作成しました。')
