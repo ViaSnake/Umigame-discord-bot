@@ -35,8 +35,7 @@ async def about(ctx):
   await ctx.message.delete()
 
 @bot.command()
-async def question(ctx, *, arg):
-
+async def q(ctx, *, arg):
   async def create_text_channel(message, channel_name):
     category_id = message.channel.category_id
     category = message.guild.get_channel(category_id)
