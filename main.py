@@ -55,6 +55,7 @@ async def q(ctx, *, arg):
 async def end(ctx, *, arg):
   embed=discord.Embed(title="回答", description=arg)
   await ctx.send(embed=embed)
+  await ctx.message.delete()
 
 @bot.command()
 async def info(ctx, arg):
