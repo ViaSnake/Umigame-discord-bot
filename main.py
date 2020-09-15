@@ -6,13 +6,14 @@ bot.remove_command('help')
 
 @bot.event
 async def on_message(message):
-  if message.content.endswith("?") or message.content.endswith("？"):
-    await message.add_reaction("⭕")
-    await message.add_reaction("❌")
-    await message.add_reaction("🤔")
-  elif message.content.endswith("。"):
-    await message.add_reaction("🆗")
-    await message.add_reaction("🆖")
+  if message.channel.name == "ウミガメのスープ":
+    if message.content.endswith("?") or message.content.endswith("？"):
+      await message.add_reaction("⭕")
+      await message.add_reaction("❌")
+      await message.add_reaction("🤔")
+    elif message.content.endswith("。"):
+      await message.add_reaction("🆗")
+      await message.add_reaction("🆖")
   await bot.process_commands(message)
 
 @bot.command()
