@@ -38,7 +38,7 @@ async def about(ctx):
 @bot.command()
 async def q(ctx, *, arg):
   async def create_text_channel(message, channel_name):
-    category_id = message.channel.category_id
+    category_id = 754668617890660422
     category = message.guild.get_channel(category_id)
     new_channel = await category.create_text_channel(name=channel_name)
     return new_channel
