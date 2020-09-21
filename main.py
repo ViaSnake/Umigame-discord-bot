@@ -6,7 +6,7 @@ bot.remove_command('help')
 
 @bot.event
 async def on_message(message):
-  if message.channel.name == "ウミガメのスープ":
+  if message.channel.name == "ウミガメのスープ" or message.channel.category_id == 754975068693594182 or message.channel.category_id == 754668617890660422:
     if message.content.endswith("?") or message.content.endswith("？"):
       await message.add_reaction("⭕")
       await message.add_reaction("❌")
